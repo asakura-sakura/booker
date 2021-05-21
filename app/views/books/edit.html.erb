@@ -1,0 +1,13 @@
+<h1>Book#edit</h1>
+<p>Find me in app/views/books/edit.html.erb</p>
+<h2>プロフィール編集</h2>
+<%= form_with model:@book, local:true do |f| %>
+  <label for="inputName">Name</label>
+  <%= f.text_field :title, autofocus: true, id:"title", placeholder:"title"%>
+  <label for="introduction">感想</label>
+  <%= f.text_field :body, autofocus: true, id:"body", placeholder:"感想"%>
+  <%= attachment_image_tag @book, :book_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+  <label for="inputImage">ProfileImage</label>
+
+  <%= f.attachment_field :book_image, placeholder: "プロフィール画像" %>  <%= f.submit "変更を保存" %>
+<% end %>
