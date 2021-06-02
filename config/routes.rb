@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :id
   end
-
+  get '/home/about', to: 'about#index'
   resources :books do
     resources :id
   end
